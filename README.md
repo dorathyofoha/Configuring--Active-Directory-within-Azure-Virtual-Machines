@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/w7amRI0.png" height="40%" width="60%"/>
 </p>
 
-<h1>Configuring On-premises Active Directory within Azure VMs</h1>In this project, I configured on-premises Active Directory and created user accounts with PowerShell within Azure Virtual Machines.<br />
+<h1>Configuring On-premises Active Directory within Azure VMs</h1>In this project, I installed and configured on-premises Active Directory, and created user accounts with PowerShell within Azure Virtual Machines.<br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -11,6 +11,7 @@
 - Remote Desktop
 - Active Directory Domain Services
 - PowerShell
+- Command Line Interface (CLI)
 
 <h2>Operating Systems Used </h2>
 
@@ -19,7 +20,7 @@
 
 <h2>High-Level Steps</h2>
 
-- Create 2 virtual machines, one with Windows 10 (Client VM) and the other with Windows Server 2022 (DC/Domain Controller VM)
+- Create 2 virtual machines, one with Windows 10 (Client VM) and the other with Windows Server 2022 (Domain Controller VM)
 -	Set the DC’s NIC private IP address from Dynamic to Static
 -	Connect to both VMs using Remote Desktop
 -	Initiate a perpetual ping from the Client to the DC; if there is no reply, enable Core Networking Diagnostics in the DC’s firewall
@@ -37,7 +38,7 @@
 <img src="https://i.imgur.com/ti0b95l.png" height="70%" width="70%"/>
 </p>
 <p>
-I started by creating two virtual machines in Azure, one with Windows Server 2022 and the other with Windows 10. The Windows Server 2022 VM would serve as the Domain Controller (DC) and the Windows 10 VM would serve as the Client machine. I also set the DC’s NIC private IP address from Dynamic to Static, so that later in the lab when I configured the Client’s DNS settings (DC’s private IP address), the IP address would not change. Once the virtual machines were set up, I viewed the topology in Azure’s Network Watcher to make sure both machines were in the same network and subnet.
+I started by creating two virtual machines in Azure, one with Windows Server 2022 and the other with Windows 10. The Windows Server 2022 VM would serve as the Domain Controller (DC) and the Windows 10 VM would serve as the Client machine. I also set the DC’s NIC private IP address from Dynamic to Static, so that later in the lab when I configured the Client’s DNS settings (DC’s private IP address), the IP address would not change. Once the virtual machines were set up, I viewed the topology in Azure’s Network Watcher to ensure both machines were in the same network and subnet.
 </p>
 <br />
 
@@ -105,6 +106,6 @@ Lastly, I created 10,000 user accounts using a PowerShell script. All of the acc
 <br />
 
 <p>
-✨ This lab showed me a lot about how Active Directory works and was really interesting, plus it was cool creating thousands of user accounts using a PowerShell script!
+✨ This lab was of immense value to me. I learnt a lot about how Active Directory works and had fun navigating through AD, creating thousands of user accounts using a PowerShell script, changing a user's password.
 </p>
 <br />
